@@ -6,6 +6,7 @@ import ControlPanelDownloadChartButton from "./ControlPanelDownloadChartButton";
 import ControlPanelGoToResultTableButton from "./ControlPanelGoToResultTableButton";
 import { useContext } from "react";
 import { ProcessQueueControllerContext } from "@hooks/contexts";
+import ControlPanelSortQueuePriorityButton from "./ControlPanelSortQueuePriorityButton";
 
 /**
  * The main control panel for managing the process queues.
@@ -21,6 +22,7 @@ export default function ControlPanel() {
                 <div className="control-panel-buttons">
                     <ControlPanelAddQueueButton />
                     <ControlPanelDownloadChartButton />
+                    <ControlPanelSortQueuePriorityButton />
                     <ControlPanelGoToResultTableButton />
                 </div>
 
