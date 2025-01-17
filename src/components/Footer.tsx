@@ -15,7 +15,7 @@ export default function Footer() {
         <footer>
             <div className="footer-links">
                 <FooterLink
-                    href="https://github.com/Rian8337"
+                    href="https://github.com/Rian8337/process-scheduling-simulator"
                     icon={<FaGithub size={"2em"} />}
                 />
             </div>
