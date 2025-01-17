@@ -1,0 +1,13 @@
+.process {
+    max-width: max(20%, 2em);
+    border: 0.1em solid gray;
+    padding: 0.5em;
+}
+
+.process > *:nth-child(n + 2) {
+    margin-top: 0.5em;
+}
+
+.process-time-input {
+    max-width: max(20%, 2em);
+}

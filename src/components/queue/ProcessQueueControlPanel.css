@@ -1,0 +1,30 @@
+.queue-controller {
+    width: 100%;
+    border: 0.1em solid gray;
+    box-sizing: border-box;
+    padding: 0.5em;
+}
+
+.queue-controller > *:nth-child(n + 2) {
+    margin-top: 0.5em;
+}
+
+.process-list {
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+}
+
+.process-list > *:nth-child(n + 2) {
+    margin-left: 1em;
+}
+
+@media screen and (max-width: 750px) {
+    .queue-controller {
+        padding: 0.25em;
+    }
+
+    .process-list > *:nth-child(n + 2) {
+        margin-left: 0.5em;
+    }
+}
