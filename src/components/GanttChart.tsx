@@ -112,8 +112,18 @@ export default function GanttChart() {
     }, [schedulerResult, width, height]);
 
     return (
-        <canvas id="chart" ref={canvasRef}>
-            Canvas is not supported by your browser.
-        </canvas>
+        <>
+            <h2
+                style={{
+                    textAlign: "center",
+                }}
+            >
+                Gantt Chart
+            </h2>
+
+            <canvas id="chart" ref={canvasRef}>
+                Canvas is not supported by your browser.
+            </canvas>
+        </>
     );
 }
