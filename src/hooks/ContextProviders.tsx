@@ -1,6 +1,7 @@
-import { JSX, FC } from "react";
+import { FC, JSX } from "react";
 import {
     AvailablePriorityContextProvider,
+    GanttChartObserverContextProvider,
     ProcessQueueControllerContextProvider,
     SchedulerResultContextProvider,
 } from "./providers";
@@ -16,5 +17,6 @@ const compose =
 export const Providers = compose(
     AvailablePriorityContextProvider,
     ProcessQueueControllerContextProvider,
-    SchedulerResultContextProvider
+    SchedulerResultContextProvider,
+    GanttChartObserverContextProvider
 );

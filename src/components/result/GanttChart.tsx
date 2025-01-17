@@ -1,13 +1,37 @@
 import { useContext, useEffect, useRef } from "react";
-import { SchedulerResultContext, useWindowSize } from "@hooks/index";
+import {
+    GanttChartObserverContext,
+    ProcessQueueControllerContext,
+    SchedulerResultContext,
+    useWindowSize,
+} from "@hooks/index";
+import { MultiLevelQueueScheduler } from "@scheduler/index";
 
 /**
  * The Gantt chart component.
  */
 export default function GanttChart() {
-    const { state: schedulerResult } = useContext(SchedulerResultContext);
+    const { state: observer } = useContext(GanttChartObserverContext);
+    const { state: controllers } = useContext(ProcessQueueControllerContext);
+    const { state: schedulerResult, setState: setSchedulerResult } = useContext(
+        SchedulerResultContext
+    );
+
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [width, height] = useWindowSize();
+
+    useEffect(() => {
+        const scheduler = new MultiLevelQueueScheduler();
+
+        for (const controller of controllers) {
+            scheduler.add(controller.toQueue());
+        }
+
+        const result = scheduler.run();
+
+        setSchedulerResult(result);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [observer]);
 
     useEffect(() => {
         if (!canvasRef.current) {

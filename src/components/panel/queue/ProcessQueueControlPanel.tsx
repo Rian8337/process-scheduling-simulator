@@ -1,5 +1,6 @@
-import { useObserver } from "@hooks/index";
+import { GanttChartObserverContext, useObserver } from "@hooks/index";
 import { ProcessQueueController } from "@scheduler/index";
+import { useContext, useEffect } from "react";
 import ProcessControlPanelList from "../process/ProcessControlPanelList";
 import ProcessQueueAddProcessButton from "./ProcessQueueAddProcessButton";
 import ProcessQueueAlgorithmPicker from "./ProcessQueueAlgorithmPicker";
@@ -17,8 +18,17 @@ interface Props {
  */
 export default function ProcessQueueControlPanel(props: Props) {
     const { controller } = props;
+    const { setState: setObserver } = useContext(GanttChartObserverContext);
 
     useObserver(controller);
+
+    useEffect(() => {
+        controller.observers.add(setObserver);
+
+        return () => {
+            controller.observers.delete(setObserver);
+        };
+    }, [controller.observers, setObserver]);
 
     return (
         <div className="queue-controller">

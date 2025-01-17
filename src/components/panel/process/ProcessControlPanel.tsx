@@ -1,4 +1,6 @@
+import { GanttChartObserverContext } from "@hooks/index";
 import { ProcessController, ProcessQueueController } from "@scheduler/index";
+import { useContext, useEffect } from "react";
 import ProcessArrivalTimeInput from "./ProcessArrivalTimeInput";
 import ProcessBurstTimeInput from "./ProcessBurstTimeInput";
 import "./ProcessControlPanel.css";
@@ -16,6 +18,15 @@ interface Props {
  */
 export default function ProcessControlPanel(props: Props) {
     const { controller } = props;
+    const { setState: setObserver } = useContext(GanttChartObserverContext);
+
+    useEffect(() => {
+        controller.observers.add(setObserver);
+
+        return () => {
+            controller.observers.delete(setObserver);
+        };
+    }, [controller.observers, setObserver]);
 
     return (
         <div className="process">
