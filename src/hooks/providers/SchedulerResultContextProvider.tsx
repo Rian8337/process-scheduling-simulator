@@ -1,6 +1,6 @@
 import { PropsWithChildren, useState } from "react";
-import { SchedulerResult } from "../scheduler";
-import { SchedulerResultContext } from "./contexts/SchedulerResultContext";
+import { SchedulerResult } from "../../scheduler";
+import { SchedulerResultContext } from "../contexts";
 
 export function SchedulerResultContextProvider(props: PropsWithChildren) {
     const [state, setState] = useState<SchedulerResult | null>(null);
