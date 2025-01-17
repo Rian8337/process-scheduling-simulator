@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { ProcessQueueController } from "../../scheduler";
-import { AvailablePriorityContext } from "../../hooks";
+import { ProcessQueueController } from "@scheduler/index";
+import { AvailablePriorityContext } from "@hooks/index";
 
 interface Props {
     readonly controller: ProcessQueueController;

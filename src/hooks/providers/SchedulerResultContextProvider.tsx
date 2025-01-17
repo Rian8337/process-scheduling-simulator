@@ -1,5 +1,5 @@
 import { PropsWithChildren, useState } from "react";
-import { SchedulerResult } from "../../scheduler";
+import { SchedulerResult } from "@scheduler/index";
 import { SchedulerResultContext } from "../contexts";
 
 export function SchedulerResultContextProvider(props: PropsWithChildren) {

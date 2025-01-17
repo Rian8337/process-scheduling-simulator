@@ -1,6 +1,6 @@
 import { PropsWithChildren, useState } from "react";
 import { ProcessQueueControllerContext } from "../contexts";
-import { ProcessQueueController } from "../../scheduler";
+import { ProcessQueueController } from "@scheduler/index";
 
 export function ProcessQueueControllerContextProvider(
     props: PropsWithChildren

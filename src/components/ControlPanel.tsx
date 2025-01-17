@@ -3,8 +3,11 @@ import {
     AvailablePriorityContext,
     ProcessQueueControllerContext,
     SchedulerResultContext,
-} from "../hooks";
-import { MultiLevelQueueScheduler, ProcessQueueController } from "../scheduler";
+} from "@hooks/index";
+import {
+    MultiLevelQueueScheduler,
+    ProcessQueueController,
+} from "@scheduler/index";
 import "./ControlPanel.css";
 import ProcessQueueControlPanelList from "./queue/ProcessQueueControlPanelList";
 

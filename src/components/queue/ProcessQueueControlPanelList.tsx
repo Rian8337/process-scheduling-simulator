@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import ProcessQueueControlPanel from "./ProcessQueueControlPanel";
-import { ProcessQueueControllerContext } from "../../hooks";
+import { ProcessQueueControllerContext } from "@hooks/index";
 import "./ProcessQueueControlPanelList.css";
 
 export default function ProcessQueueControlPanelList() {

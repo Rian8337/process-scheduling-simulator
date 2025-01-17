@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef } from "react";
-import { SchedulerResultContext, useWindowSize } from "../hooks";
+import { SchedulerResultContext, useWindowSize } from "@hooks/index";
 
 /**
  * The Gantt chart component.

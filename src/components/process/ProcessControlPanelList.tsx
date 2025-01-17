@@ -1,4 +1,4 @@
-import { ProcessQueueController } from "../../scheduler";
+import { ProcessQueueController } from "@scheduler/index";
 import ProcessControlPanel from "./ProcessControlPanel";
 
 interface Props {

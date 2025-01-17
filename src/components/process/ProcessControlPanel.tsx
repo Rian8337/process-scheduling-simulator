@@ -1,4 +1,4 @@
-import { ProcessController, ProcessQueueController } from "../../scheduler";
+import { ProcessController, ProcessQueueController } from "@scheduler/index";
 import ProcessArrivalTimeInput from "./ProcessArrivalTimeInput";
 import ProcessBurstTimeInput from "./ProcessBurstTimeInput";
 import "./ProcessControlPanel.css";

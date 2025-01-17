@@ -1,5 +1,5 @@
-import { useObserver } from "../../hooks";
-import { ProcessQueueController } from "../../scheduler";
+import { useObserver } from "@hooks/index";
+import { ProcessQueueController } from "@scheduler/index";
 import ProcessControlPanelList from "../process/ProcessControlPanelList";
 import ProcessQueueAddProcessButton from "./ProcessQueueAddProcessButton";
 import ProcessQueueAlgorithmPicker from "./ProcessQueueAlgorithmPicker";

@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { IProcessQueueControllerContext } from "../models/IProcessQueueControllerContext";
+import { IProcessQueueControllerContext } from "../models";
 
 export const ProcessQueueControllerContext =
     createContext<IProcessQueueControllerContext>({

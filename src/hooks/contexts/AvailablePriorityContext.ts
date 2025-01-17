@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { IAvailablePriorityContext } from "../models/IAvailablePriorityContext";
+import { IAvailablePriorityContext } from "../models";
 
 export const AvailablePriorityContext =
     createContext<IAvailablePriorityContext>({

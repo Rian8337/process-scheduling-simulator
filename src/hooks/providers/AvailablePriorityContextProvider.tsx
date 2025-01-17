@@ -1,6 +1,6 @@
 import { PropsWithChildren, useState } from "react";
 import { AvailablePriorityContext } from "../contexts/AvailablePriorityContext";
-import { priorities } from "@scheduler/priorities";
+import { priorities } from "@scheduler/index";
 
 export function AvailablePriorityContextProvider(props: PropsWithChildren) {
     const [state, setState] = useState<number[]>(priorities.slice());

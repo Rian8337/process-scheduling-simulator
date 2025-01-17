@@ -3,7 +3,7 @@ import {
     ProcessController,
     ProcessQueueController,
     SchedulingAlgorithm,
-} from "../../scheduler";
+} from "@scheduler/index";
 
 interface Props {
     readonly queueController: ProcessQueueController;

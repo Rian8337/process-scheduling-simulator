@@ -1,4 +1,4 @@
-import { ProcessController } from "../../scheduler";
+import { ProcessController } from "@scheduler/index";
 
 interface Props {
     readonly controller: ProcessController;

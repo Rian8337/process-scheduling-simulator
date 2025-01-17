@@ -1,4 +1,4 @@
-import { ProcessQueueController, SchedulingAlgorithm } from "../../scheduler";
+import { ProcessQueueController, SchedulingAlgorithm } from "@scheduler/index";
 
 interface Props {
     readonly controller: ProcessQueueController;
