@@ -8,6 +8,20 @@
     margin-top: 0.5em;
 }
 
+.process-label-input {
+    max-width: min(30%, 3em);
+}
+
 .process-time-input {
-    max-width: max(20%, 2em);
+    max-width: min(20%, 2em);
+}
+
+@media screen and (max-width: 750px) {
+    .process {
+        padding: 0.25em;
+    }
+
+    .process > *:nth-child(n + 2) {
+        margin-top: 0.25em;
+    }
 }

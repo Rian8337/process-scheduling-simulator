@@ -13,7 +13,7 @@ export default function ProcessNameInput(props: Props) {
 
             <input
                 id={`process-label-${controller.name}`}
-                className="process-label"
+                className="process-label-input"
                 type="text"
                 defaultValue={controller.name}
                 onChange={(e) => {
