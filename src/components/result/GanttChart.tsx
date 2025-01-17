@@ -84,10 +84,9 @@ export default function GanttChart() {
             ctx.fillRect(0, 0, width, height);
 
             ctx.strokeStyle = "black";
-            ctx.lineWidth = 1.5;
             ctx.strokeRect(0, 0, width, height);
 
-            // Clip the chart area so that the text does not overflow.
+            // Clip the chart area so that the process label does not overflow.
             ctx.beginPath();
             ctx.rect(0, 0, width, height);
             ctx.clip();
