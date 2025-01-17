@@ -1,6 +1,7 @@
-import GanttChart from "./components/result/GanttChart";
-import ControlPanel from "./components/panel/ControlPanel";
+import GanttChart from "@components/result/GanttChart";
+import ControlPanel from "@components/panel/ControlPanel";
 import Footer from "@components/Footer";
+import ScrollToTop from "@components/ScrollToTop";
 
 export default function App() {
     return (
@@ -12,6 +13,7 @@ export default function App() {
             <ControlPanel />
             <hr />
             <Footer />
+            <ScrollToTop />
         </>
     );
 }

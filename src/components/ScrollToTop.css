@@ -1,0 +1,10 @@
+.scroll-to-top {
+    position: fixed;
+    bottom: 0.1em;
+    right: 0.1em;
+    font-size: 3rem;
+    z-index: 1;
+    cursor: pointer;
+    color: rgb(14, 83, 243);
+    opacity: 60%;
+}
