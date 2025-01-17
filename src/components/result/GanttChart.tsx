@@ -41,7 +41,7 @@ export default function GanttChart() {
         const canvas = canvasRef.current;
 
         canvas.width = document.body.clientWidth;
-        canvas.height = innerHeight / 5;
+        canvas.height = innerHeight / 8;
 
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         const ctx = canvas.getContext("2d")!;
@@ -69,7 +69,7 @@ export default function GanttChart() {
         // Draw the chart.
         for (const item of data) {
             const width = (item.endTime - item.startTime) * step;
-            const height = canvas.height / 1.5;
+            const height = canvas.height / 2;
 
             const x =
                 canvas.width * 0.015 +
