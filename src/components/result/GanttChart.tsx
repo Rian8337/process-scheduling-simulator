@@ -40,7 +40,7 @@ export default function GanttChart() {
 
         const canvas = canvasRef.current;
 
-        canvas.width = document.body.clientWidth;
+        canvas.width = document.body.offsetWidth;
         canvas.height = innerHeight / 8;
 
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
