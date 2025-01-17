@@ -5,7 +5,7 @@ export default function App() {
     return (
         <>
             <GanttChart />
-            <br />
+            <hr />
             <ControlPanel />
         </>
     );
