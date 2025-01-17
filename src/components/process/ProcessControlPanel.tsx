@@ -3,7 +3,7 @@ import ProcessArrivalTimeInput from "./ProcessArrivalTimeInput";
 import ProcessBurstTimeInput from "./ProcessBurstTimeInput";
 import "./ProcessControlPanel.css";
 import ProcessNameInput from "./ProcessNameInput";
-import ProcessPriorityInput from "./ProcessPriorityInput";
+import ProcessPriorityPicker from "./ProcessPriorityPicker";
 import ProcessRemoveButton from "./ProcessRemoveButton";
 
 interface Props {
@@ -22,7 +22,7 @@ export default function ProcessControlPanel(props: Props) {
             <ProcessNameInput controller={controller} />
             <ProcessArrivalTimeInput controller={controller} />
             <ProcessBurstTimeInput controller={controller} />
-            <ProcessPriorityInput {...props} />
+            <ProcessPriorityPicker {...props} />
             <ProcessRemoveButton {...props} />
         </div>
     );

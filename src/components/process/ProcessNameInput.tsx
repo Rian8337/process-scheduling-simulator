@@ -16,8 +16,12 @@ export default function ProcessNameInput(props: Props) {
                 className="process-label-input"
                 type="text"
                 defaultValue={controller.name}
-                onChange={(e) => {
-                    controller.name = e.target.value;
+                onBlur={(e) => {
+                    if (e.target.value) {
+                        controller.name = e.target.value;
+                    } else {
+                        e.target.value = controller.name;
+                    }
                 }}
             />
         </div>

@@ -20,8 +20,12 @@ export default function ProcessArrivalTimeInput(props: Props) {
                 min={0}
                 step={1}
                 defaultValue={controller.arrivalTime.toString()}
-                onChange={(e) => {
-                    controller.arrivalTime = parseInt(e.target.value);
+                onBlur={(e) => {
+                    if (e.target.value) {
+                        controller.arrivalTime = e.target.valueAsNumber;
+                    } else {
+                        e.target.valueAsNumber = controller.arrivalTime;
+                    }
                 }}
             />
         </div>

@@ -22,8 +22,12 @@ export default function ProcessQueueQuantumPicker(props: Props) {
                 min={1}
                 step={1}
                 defaultValue={controller.timeQuantum.toString()}
-                onChange={(e) => {
-                    controller.timeQuantum = parseInt(e.target.value);
+                onBlur={(e) => {
+                    if (e.target.value) {
+                        controller.timeQuantum = e.target.valueAsNumber;
+                    } else {
+                        e.target.valueAsNumber = controller.timeQuantum;
+                    }
                 }}
             />
         </div>
