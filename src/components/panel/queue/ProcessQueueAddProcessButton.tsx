@@ -14,8 +14,7 @@ export default function ProcessQueueAddProcessButton(props: Props) {
             onClick={() => {
                 controller.addProcess(
                     new ProcessController(
-                        `Q${controller.id.toString()}-P${(controller.processIncrementalId++).toString()}`,
-                        controller.priority
+                        `Q${controller.id.toString()}-P${(controller.processIncrementalId++).toString()}`
                     )
                 );
             }}
