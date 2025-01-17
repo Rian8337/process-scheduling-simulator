@@ -18,7 +18,7 @@ import "./index.css";
 
     for (const [fontFile, weight] of fonts) {
         try {
-            const face = new FontFace("Torus", `url(/fonts/${fontFile}.otf)`, {
+            const face = new FontFace("Torus", `url(./fonts/${fontFile}.otf)`, {
                 weight: weight.toString(),
             });
 
