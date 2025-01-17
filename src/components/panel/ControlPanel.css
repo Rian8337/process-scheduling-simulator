@@ -4,7 +4,7 @@
 
 .control-panel-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     column-gap: 0.5em;
 }
 

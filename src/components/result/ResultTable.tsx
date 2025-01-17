@@ -5,7 +5,7 @@ import "./ResultTable.css";
 export default function ResultTable() {
     const { state: schedulerResult } = useContext(SchedulerResultContext);
 
-    if (!schedulerResult) {
+    if (!schedulerResult || schedulerResult.ganttChartData.length === 0) {
         return null;
     }
 
@@ -23,23 +23,21 @@ export default function ResultTable() {
                 </tr>
             </thead>
             <tbody>
-                {schedulerResult.ganttChartData.map((item) => (
-                    <tr key={item.process.label}>
-                        <td>{item.process.label}</td>
-                        <td>{item.process.arrivalTime}</td>
-                        <td>{item.process.burstTime}</td>
-                        <td>
-                            {schedulerResult.waitingTime[item.process.label]}
-                        </td>
-                        <td>
-                            {schedulerResult.turnaroundTime[item.process.label]}
-                        </td>
-                        <td>{item.endTime}</td>
-                        <td>
-                            {schedulerResult.responseTime[item.process.label]}
-                        </td>
-                    </tr>
-                ))}
+                {Object.keys(schedulerResult.waitingTime).map((key, i) => {
+                    const process = schedulerResult.processes[key];
+
+                    return (
+                        <tr key={`${key}-${i.toString()}`}>
+                            <td>{key}</td>
+                            <td>{process.arrivalTime}</td>
+                            <td>{process.burstTime}</td>
+                            <td>{schedulerResult.waitingTime[key]}</td>
+                            <td>{schedulerResult.turnaroundTime[key]}</td>
+                            <td>{schedulerResult.exitTime[key]}</td>
+                            <td>{schedulerResult.responseTime[key]}</td>
+                        </tr>
+                    );
+                })}
             </tbody>
         </table>
     );

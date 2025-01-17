@@ -95,7 +95,7 @@ export default function GanttChart() {
             // Draw the process label.
             ctx.fillStyle = "black";
             ctx.font = "1em Torus, sans-serif";
-            ctx.fillText(item.process.label, width / 2, height / 2);
+            ctx.fillText(item.label, width / 2, height / 2);
 
             ctx.closePath();
             ctx.restore();

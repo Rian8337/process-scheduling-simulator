@@ -1,13 +1,11 @@
-import { Process } from "./Process";
-
 /**
  * Represents data for a Gantt chart.
  */
 export interface GanttChartData {
     /**
-     * The process that is being executed.
+     * The label of the process that was executed.
      */
-    readonly process: Process;
+    readonly label: string;
 
     /**
      * The start time of the process execution.

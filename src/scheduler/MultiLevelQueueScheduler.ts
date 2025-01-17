@@ -56,7 +56,9 @@ export class MultiLevelQueueScheduler {
         this.refresh();
 
         const result: SchedulerResult = {
+            processes: {},
             waitingTime: {},
+            exitTime: {},
             turnaroundTime: {},
             responseTime: {},
             ganttChartData: [],
@@ -83,6 +85,9 @@ export class MultiLevelQueueScheduler {
                 const arrivedProcess = this.waitingProcesses.shift()!;
                 this.addToQueue(arrivedProcess);
 
+                // Record the process.
+                result.processes[arrivedProcess.label] = arrivedProcess;
+
                 // Check if the arrived process should preempt the current process.
                 if (currentProcess) {
                     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -99,7 +104,7 @@ export class MultiLevelQueueScheduler {
                     ) {
                         // Add Gantt chart entry for the preempted process.
                         result.ganttChartData.push({
-                            process: currentProcess,
+                            label: currentProcess.label,
                             startTime: currentProcessStartTime,
                             endTime: this.currentTime,
                         });
@@ -166,7 +171,7 @@ export class MultiLevelQueueScheduler {
                     // Process is finished.
                     // Add Gantt chart entry for completed process.
                     result.ganttChartData.push({
-                        process: currentProcess,
+                        label: currentProcess.label,
                         startTime: currentProcessStartTime,
                         endTime: this.currentTime,
                     });
@@ -180,13 +185,15 @@ export class MultiLevelQueueScheduler {
                         result.turnaroundTime[currentProcess.label] -
                         currentProcess.burstTime;
 
+                    result.exitTime[currentProcess.label] = this.currentTime;
+
                     currentProcess = null;
                     remainingRunningTime = 0;
                 } else if (remainingRunningTime === 0) {
                     // The remaining running time has finished, so the process must be preempted.
                     // Add Gantt chart entry for the preempted process.
                     result.ganttChartData.push({
-                        process: currentProcess,
+                        label: currentProcess.label,
                         startTime: currentProcessStartTime,
                         endTime: this.currentTime,
                     });
@@ -203,7 +210,7 @@ export class MultiLevelQueueScheduler {
                     if (preemptingProcess) {
                         // Add Gantt chart entry for the preempted process.
                         result.ganttChartData.push({
-                            process: currentProcess,
+                            label: currentProcess.label,
                             startTime: currentProcessStartTime,
                             endTime: this.currentTime,
                         });
