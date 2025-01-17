@@ -1,5 +1,11 @@
+.result-table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
 .result-table {
     width: 100%;
+    border-collapse: collapse;
 }
 
 .result-table,
