@@ -8,7 +8,9 @@ export default function ControlPanelDownloadChartButton() {
         <button
             type="button"
             id="download-chart"
-            hidden={!schedulerResult}
+            hidden={
+                !schedulerResult || schedulerResult.ganttChartData.length === 0
+            }
             onClick={() => {
                 const canvas = document.getElementById(
                     "chart"

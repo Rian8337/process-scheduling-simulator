@@ -8,7 +8,9 @@ export default function ControlPanelGoToResultTableButton() {
         <button
             type="button"
             id="go-to-result-table"
-            hidden={!schedulerResult}
+            hidden={
+                !schedulerResult || schedulerResult.ganttChartData.length === 0
+            }
             onClick={() => {
                 window.location.hash = "result-table";
             }}
