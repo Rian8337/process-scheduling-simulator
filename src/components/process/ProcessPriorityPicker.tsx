@@ -1,4 +1,5 @@
 import {
+    priorities,
     ProcessController,
     ProcessQueueController,
     SchedulingAlgorithm,
@@ -9,7 +10,7 @@ interface Props {
     readonly controller: ProcessController;
 }
 
-export default function ProcessPriorityInput(props: Props) {
+export default function ProcessPriorityPicker(props: Props) {
     const { queueController, controller } = props;
 
     return (
@@ -26,18 +27,22 @@ export default function ProcessPriorityInput(props: Props) {
                 Priority:
             </label>
 
-            <input
+            <select
                 id={`process-priority-${controller.name}`}
-                className="process-time-input"
-                type="number"
-                min={-20}
-                max={19}
-                step={1}
                 defaultValue={controller.processPriority.toString()}
                 onChange={(e) => {
                     controller.processPriority = parseInt(e.target.value);
                 }}
-            />
+            >
+                {priorities.map((priority) => (
+                    <option
+                        key={`process-priority-${controller.name}-${priority.toString()}`}
+                        value={priority.toString()}
+                    >
+                        {priority}
+                    </option>
+                ))}
+            </select>
         </div>
     );
 }
