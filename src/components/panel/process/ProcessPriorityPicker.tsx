@@ -30,9 +30,9 @@ export default function ProcessPriorityPicker(props: Props) {
 
             <select
                 id={`process-priority-${controller.name}`}
-                defaultValue={controller.processPriority.toString()}
+                defaultValue={controller.priority.toString()}
                 onChange={(e) => {
-                    controller.processPriority = parseInt(
+                    controller.priority = parseInt(
                         e.target.value
                     ) as Priorities;
                 }}

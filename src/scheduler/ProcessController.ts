@@ -24,11 +24,6 @@ export class ProcessController implements IObservable {
         this.notifyChange();
     }
 
-    /**
-     * The priority of the queue this process belongs to.
-     */
-    readonly queuePriority: Priorities;
-
     private _arrivalTime = 0;
 
     /**
@@ -59,36 +54,37 @@ export class ProcessController implements IObservable {
         this.notifyChange();
     }
 
-    private _processPriority: Priorities = 0;
+    private _priority: Priorities = 0;
 
     /**
      * The priority of the process.
      */
-    get processPriority(): Priorities {
-        return this._processPriority;
+    get priority(): Priorities {
+        return this._priority;
     }
 
-    set processPriority(value: Priorities) {
-        this._processPriority = value;
+    set priority(value: Priorities) {
+        this._priority = value;
 
         this.notifyChange();
     }
 
-    constructor(name: string, queuePriority: Priorities) {
+    constructor(name: string) {
         this._name = name;
-        this.queuePriority = queuePriority;
     }
 
     /**
      * Converts this controller to a process.
+     *
+     * @param queuePriority The priority of the queue the process is in.
      */
-    toProcess(): Process {
+    toProcess(queuePriority: Priorities): Process {
         return new Process(
             this.name,
             this.arrivalTime,
             this.burstTime,
-            this.queuePriority,
-            this.processPriority
+            queuePriority,
+            this.priority
         );
     }
 

@@ -116,7 +116,7 @@ export class ProcessQueueController implements IObservable {
         queue.timeQuantum = this.timeQuantum;
 
         for (const process of this.processes) {
-            queue.enqueue(process.toProcess());
+            queue.enqueue(process.toProcess(this.priority));
         }
 
         return queue;
