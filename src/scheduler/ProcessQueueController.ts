@@ -3,6 +3,7 @@ import { ProcessQueue } from "../scheduler/ProcessQueue";
 import { SchedulingAlgorithm } from "../scheduler/SchedulingAlgorithm";
 import { ProcessController } from "./ProcessController";
 import { IObservable } from "../hooks/models/IObservable";
+import { Priorities } from "./priorities";
 
 /**
  * The controller of a process queue.
@@ -31,16 +32,16 @@ export class ProcessQueueController implements IObservable {
         return this._processes;
     }
 
-    private _priority: number;
+    private _priority: Priorities;
 
     /**
      * The priority of this queue.
      */
-    get priority(): number {
+    get priority(): Priorities {
         return this._priority;
     }
 
-    set priority(value: number) {
+    set priority(value: Priorities) {
         this._priority = value;
 
         this.notifyChange();
@@ -76,7 +77,7 @@ export class ProcessQueueController implements IObservable {
         this.notifyChange();
     }
 
-    constructor(priority: number) {
+    constructor(priority: Priorities) {
         this._priority = priority;
     }
 

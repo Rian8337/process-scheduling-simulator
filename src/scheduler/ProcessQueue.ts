@@ -1,3 +1,4 @@
+import { Priorities } from "./priorities";
 import { Process } from "./Process";
 import { Queue } from "./Queue";
 import { SchedulingAlgorithm } from "./SchedulingAlgorithm";
@@ -16,7 +17,7 @@ export class ProcessQueue extends Queue<Process> {
     /**
      * The priority of this queue.
      */
-    priority = 0;
+    priority: Priorities = 0;
 
     /**
      * The scheduling algorithm of this queue.

@@ -1,4 +1,5 @@
 import {
+    Priorities,
     priorities,
     ProcessController,
     ProcessQueueController,
@@ -31,7 +32,9 @@ export default function ProcessPriorityPicker(props: Props) {
                 id={`process-priority-${controller.name}`}
                 defaultValue={controller.processPriority.toString()}
                 onChange={(e) => {
-                    controller.processPriority = parseInt(e.target.value);
+                    controller.processPriority = parseInt(
+                        e.target.value
+                    ) as Priorities;
                 }}
             >
                 {priorities.map((priority) => (

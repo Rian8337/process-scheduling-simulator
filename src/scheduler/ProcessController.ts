@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 import { Process } from "./Process";
-import { IObservable } from "../hooks/models/IObservable";
+import { IObservable } from "@hooks/index";
+import { Priorities } from "./priorities";
 
 /**
  * The controller of a process.
@@ -26,7 +27,7 @@ export class ProcessController implements IObservable {
     /**
      * The priority of the queue this process belongs to.
      */
-    readonly queuePriority: number;
+    readonly queuePriority: Priorities;
 
     private _arrivalTime = 0;
 
@@ -58,22 +59,22 @@ export class ProcessController implements IObservable {
         this.notifyChange();
     }
 
-    private _processPriority = 0;
+    private _processPriority: Priorities = 0;
 
     /**
      * The priority of the process.
      */
-    get processPriority(): number {
+    get processPriority(): Priorities {
         return this._processPriority;
     }
 
-    set processPriority(value: number) {
+    set processPriority(value: Priorities) {
         this._processPriority = value;
 
         this.notifyChange();
     }
 
-    constructor(name: string, queuePriority: number) {
+    constructor(name: string, queuePriority: Priorities) {
         this._name = name;
         this.queuePriority = queuePriority;
     }

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ProcessQueueController } from "@scheduler/index";
+import { Priorities, ProcessQueueController } from "@scheduler/index";
 import { AvailablePriorityContext } from "@hooks/index";
 
 interface Props {
@@ -21,7 +21,9 @@ export default function ProcessQueuePriorityPicker(props: Props) {
                 id={`priority-${controller.id.toString()}`}
                 defaultValue={controller.priority.toString()}
                 onChange={(e) => {
-                    const selectedPriority = parseInt(e.target.value);
+                    const selectedPriority = parseInt(
+                        e.target.value
+                    ) as Priorities;
 
                     setAvailablePriorities(
                         availablePriorities

@@ -1,3 +1,4 @@
+import { Priorities } from "./priorities";
 import { ProcessState } from "./ProcessState";
 
 /**
@@ -17,12 +18,12 @@ export class Process {
     /**
      * The priority of the queue this process belongs to.
      */
-    queuePriority: number;
+    queuePriority: Priorities;
 
     /**
      * The priority of this process. Used for priority-based scheduling.
      */
-    processPriority: number;
+    processPriority: Priorities;
 
     /**
      * The arrival time of this process.
@@ -43,8 +44,8 @@ export class Process {
         label: string,
         arrivalTime: number,
         burstTime: number,
-        queuePriority: number,
-        processPriority: number
+        queuePriority: Priorities,
+        processPriority: Priorities
     ) {
         this.label = label;
         this.arrivalTime = arrivalTime;
