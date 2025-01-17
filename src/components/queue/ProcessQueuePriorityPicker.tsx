@@ -19,6 +19,7 @@ export default function ProcessQueuePriorityPicker(props: Props) {
 
             <select
                 id={`priority-${controller.id.toString()}`}
+                defaultValue={controller.priority.toString()}
                 onChange={(e) => {
                     const selectedPriority = parseInt(e.target.value);
 
@@ -31,7 +32,6 @@ export default function ProcessQueuePriorityPicker(props: Props) {
 
                     controller.priority = selectedPriority;
                 }}
-                defaultValue={controller.priority.toString()}
             >
                 {availablePriorities
                     // Ensure that the priority of the controller is available in the selection.

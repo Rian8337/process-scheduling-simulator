@@ -8,3 +8,4 @@ export * from "./ProcessState";
 export * from "./Queue";
 export * from "./SchedulerResult";
 export * from "./SchedulingAlgorithm";
+export * from "./priorities";
