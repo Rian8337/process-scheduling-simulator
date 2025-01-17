@@ -9,14 +9,10 @@ export default function ProcessQueueControlPanelList() {
     return (
         <div className="queue-list">
             {controllers.map((controller) => (
-                <>
-                    <hr />
-
-                    <ProcessQueueControlPanel
-                        key={`queue-control-panel-${controller.id.toString()}`}
-                        controller={controller}
-                    />
-                </>
+                <ProcessQueueControlPanel
+                    key={`queue-control-panel-${controller.id.toString()}`}
+                    controller={controller}
+                />
             ))}
         </div>
     );

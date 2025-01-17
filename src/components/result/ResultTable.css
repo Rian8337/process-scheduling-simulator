@@ -1,0 +1,13 @@
+.result-table {
+    width: 100%;
+}
+
+.result-table,
+.result-table th,
+.result-table td {
+    border: 0.075em solid black;
+    border-collapse: collapse;
+    text-align: center;
+    height: 1em;
+    padding: 0.25em;
+}

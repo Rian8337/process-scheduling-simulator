@@ -1,0 +1,42 @@
+.control-panel > *:nth-child(n + 2) {
+    margin-top: 0.5em;
+}
+
+.control-panel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0.5em;
+}
+
+.control-panel-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.control-panel-buttons > *:nth-child(n + 2) {
+    margin-left: 0.5em;
+}
+
+@media screen and (max-width: 750px) {
+    .control-panel > *:nth-child(n + 2) {
+        margin-top: 0.25em;
+    }
+
+    .control-panel-grid {
+        margin-top: 0.25em;
+    }
+
+    .control-panel-buttons > *:nth-child(n + 2) {
+        margin-left: 0.25em;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .control-panel-grid {
+        display: block;
+    }
+
+    .control-panel-grid > *:nth-child(n + 2) {
+        margin-top: 0.5em;
+    }
+}

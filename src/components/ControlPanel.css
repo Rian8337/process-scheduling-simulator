@@ -1,9 +1,0 @@
-.control-panel > *:nth-child(n + 2) {
-    margin-top: 0.5em;
-}
-
-@media screen and (max-width: 750px) {
-    .control-panel > *:nth-child(n + 2) {
-        margin-top: 0.25em;
-    }
-}
