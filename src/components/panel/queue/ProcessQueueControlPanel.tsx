@@ -38,6 +38,8 @@ export default function ProcessQueueControlPanel(props: Props) {
             <ProcessQueueAddProcessButton controller={controller} />
             <ProcessQueueRemoveQueueButton controller={controller} />
 
+            <hr hidden={controller.processes.size === 0} />
+
             <ProcessControlPanelList controller={controller} />
         </div>
     );

@@ -137,13 +137,7 @@ export default function GanttChart() {
 
     return (
         <>
-            <h2
-                style={{
-                    textAlign: "center",
-                }}
-            >
-                Gantt Chart
-            </h2>
+            <h2>Gantt Chart</h2>
 
             <canvas id="chart" ref={canvasRef}>
                 Canvas is not supported by your browser.

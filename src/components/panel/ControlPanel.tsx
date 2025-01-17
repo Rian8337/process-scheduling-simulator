@@ -4,25 +4,33 @@ import "./ControlPanel.css";
 import ControlPanelAddQueueButton from "./ControlPanelAddQueueButton";
 import ControlPanelDownloadChartButton from "./ControlPanelDownloadChartButton";
 import ControlPanelGoToResultTableButton from "./ControlPanelGoToResultTableButton";
+import { useContext } from "react";
+import { ProcessQueueControllerContext } from "@hooks/contexts";
 
 /**
  * The main control panel for managing the process queues.
  */
 export default function ControlPanel() {
+    const { state: controllers } = useContext(ProcessQueueControllerContext);
+
     return (
-        <div className="control-panel">
-            <div className="control-panel-buttons">
-                <ControlPanelAddQueueButton />
-                <ControlPanelDownloadChartButton />
-                <ControlPanelGoToResultTableButton />
-            </div>
+        <>
+            <h2>Controls</h2>
 
-            <hr />
+            <div className="control-panel">
+                <div className="control-panel-buttons">
+                    <ControlPanelAddQueueButton />
+                    <ControlPanelDownloadChartButton />
+                    <ControlPanelGoToResultTableButton />
+                </div>
 
-            <div className="control-panel-grid">
-                <ProcessQueueControlPanelList />
-                <ResultTable />
+                <hr hidden={controllers.length === 0} />
+
+                <div className="control-panel-grid">
+                    <ProcessQueueControlPanelList />
+                    <ResultTable />
+                </div>
             </div>
-        </div>
+        </>
     );
 }
